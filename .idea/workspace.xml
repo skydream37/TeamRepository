@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7225c665-5238-4e2e-ad10-a417ad3e17e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/1111main_DUAN/1111_crawler.py" afterPath="$PROJECT_DIR$/1111main_DUAN/1111_crawler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/518-wei/518_wei.py" afterPath="$PROJECT_DIR$/518-wei/518_wei.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/518main皓/518main.py" afterPath="$PROJECT_DIR$/518main皓/518main.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/pon-ptt.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ptt-pon/ptt_softjob.py" afterPath="$PROJECT_DIR$/ptt-pon/ptt_softjob.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sheng/104_crewler.py" afterPath="$PROJECT_DIR$/sheng/104_crewler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sheng/test_json.py" afterPath="$PROJECT_DIR$/sheng/test_json.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,86 +14,94 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="104_crewler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sheng/104_crewler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2618">
-              <caret line="124" column="48" lean-forward="false" selection-start-line="124" selection-start-column="48" selection-end-line="124" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_json.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sheng/test_json.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="654">
-              <caret line="155" column="27" lean-forward="false" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ptt_softjob.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ptt-pon/ptt_softjob.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="54" column="20" lean-forward="false" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1111_crawler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1111main_DUAN/1111_crawler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="518main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/518main皓/518main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="92" column="26" lean-forward="false" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="518_wei.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/518-wei/518_wei.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="124" column="19" lean-forward="false" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="104R.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ptt-pon/104R.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="153" column="11" lean-forward="false" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.34375">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="104_crewler.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sheng/104_crewler.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2618">
+                  <caret line="124" column="48" lean-forward="false" selection-start-line="124" selection-start-column="48" selection-end-line="124" selection-end-column="48" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="test_json.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/sheng/test_json.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3096">
+                  <caret line="155" column="27" lean-forward="false" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="1111_crawler.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/1111main_DUAN/1111_crawler.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="398">
+                  <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#29#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="518main.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/518main皓/518main.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="690">
+                  <caret line="92" column="26" lean-forward="false" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="518_wei.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/518-wei/518_wei.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="404">
+                  <caret line="124" column="19" lean-forward="false" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="104R.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/ptt-pon/104R.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="178">
+                  <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="30" selection-end-column="46" />
+                  <folding>
+                    <element signature="e#0#20#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="ptt_softjob.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/ptt-pon/ptt_softjob.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-1068">
+                  <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -121,16 +125,16 @@
         <option value="$PROJECT_DIR$/1111main_DUAN/1111_crawler.py" />
         <option value="$PROJECT_DIR$/518main皓/518main.py" />
         <option value="$PROJECT_DIR$/sheng/test_json.py" />
-        <option value="$PROJECT_DIR$/ptt-pon/ptt_softjob.py" />
         <option value="$PROJECT_DIR$/518-wei/518_wei.py" />
         <option value="$PROJECT_DIR$/ptt-pon/104R.py" />
+        <option value="$PROJECT_DIR$/ptt-pon/ptt_softjob.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="928" />
+    <option name="width" value="1855" />
     <option name="height" value="951" />
   </component>
   <component name="ProjectView">
@@ -346,9 +350,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="928" height="951" extended-state="5" />
+    <frame x="65" y="24" width="1855" height="951" extended-state="4" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4989224" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15471698" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -384,24 +389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sheng/test_json.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="155" column="27" lean-forward="false" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ptt-pon/ptt_softjob.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="54" column="20" lean-forward="false" selection-start-line="54" selection-start-column="20" selection-end-line="54" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/1111main_DUAN/1111_crawler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -430,12 +417,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sheng/test_json.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3096">
+          <caret line="155" column="27" lean-forward="false" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ptt-pon/104R.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="153" column="11" lean-forward="false" selection-start-line="153" selection-start-column="11" selection-end-line="153" selection-end-column="11" />
+        <state relative-caret-position="178">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="30" selection-end-column="46" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ptt-pon/ptt_softjob.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1068">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

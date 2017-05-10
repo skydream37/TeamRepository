@@ -2,6 +2,9 @@ import requests
 from bs4 import BeautifulSoup
 from collections import Counter
 import re
+# import matplotlib.pyplot as plt
+import json
+
 wc = Counter()
 wc["C"] = 0
 wc["C++"] = 0
@@ -29,9 +32,6 @@ url = 'https://www.ptt.cc/bbs/Soft_Job/index1247.html'
 HOST = 'https://www.ptt.cc'
 headers = {"cookie":"over18=1;"}
 
-
-
-
 # 爬內文
 
 def ptt(each_link):
@@ -50,12 +50,15 @@ def ptt(each_link):
             wc[language.upper()] += 1
 
 
+
+
+
 #換頁
 res = requests.get(url,headers = headers)
 soup = BeautifulSoup(res.text,'lxml')
 buttons = soup.select('a.btn.wide')
 total_page = int(buttons[1]['href'].split('index')[1].split('.html')[0])+1
-page_to_crawl = 3
+page_to_crawl = 1248
 
 
 for page in range(total_page, total_page - page_to_crawl, -1): #單頁
@@ -74,18 +77,12 @@ for page in range(total_page, total_page - page_to_crawl, -1): #單頁
     except Exception as e:
         print(e,link['href'])
         continue
+
 print(wc)
 
-import matplotlib.pyplot as plt
-
-plt.bar(range(len(list(wc.values()))),list(wc.values()),color = 'c',width=0.8,tick_label = list(wc.keys()))
-plt.xticks(rotation = 90)
-plt.show()
-
-
-import json
-
-
+# plt.bar(range(len(list(wc.values()))),list(wc.values()),color = 'c',width=0.8,tick_label = list(wc.keys()))
+# plt.xticks(rotation = 90)
+# plt.show()
 
 data={
     'C': wc['C'],
