@@ -39,6 +39,9 @@ def ptt(each_link):
     soup = BeautifulSoup(res.text, 'lxml')
 
     content = soup.select_one('#main-content')  # 內文
+    for trash in soup.select('div.article-metaline') + soup.select('div.article-metaline-right') + soup.select(
+            'div.push') + soup.select('a') + soup.select('span') + soup.select('script'):
+        trash.decompose()
 
     words = list(set(re.findall('[A-Z]+[+#]*', content.text, re.IGNORECASE)))  # 不處理大小寫,set處理重複問題
 
@@ -52,7 +55,7 @@ res = requests.get(url,headers = headers)
 soup = BeautifulSoup(res.text,'lxml')
 buttons = soup.select('a.btn.wide')
 total_page = int(buttons[1]['href'].split('index')[1].split('.html')[0])+1
-page_to_crawl = 2
+page_to_crawl = 3
 
 
 for page in range(total_page, total_page - page_to_crawl, -1): #單頁
