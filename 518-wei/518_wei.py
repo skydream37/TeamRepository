@@ -122,7 +122,7 @@ from collections import OrderedDict
 language = OrderedDict(wc.most_common())
 print(language)
 
-with open('lanaugle_json.json','w') as f:   # 寫入json檔案
+with open('../data/lanaugle_json.json','w') as f:   # 寫入json檔案
     json.dump(language,f)                    # json 特有
 f.closed
 print (wc.most_common())

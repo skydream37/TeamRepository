@@ -66,7 +66,7 @@ def pageChange(page):
     address = []
     for href in txt.select('div.jobname_summary > a'):  # 每一頁內各工作的連接網址
         a = href['href']
-        # print(host+a)
+        print(host+a)
         links.append(host + a)  # 將各內文頁的網址丟入link陣列裡
 
 #######################內文爬蟲執行緒##########################
@@ -87,7 +87,7 @@ class pageThread (threading.Thread): #建立多執行緒類別(內文用)
 
 #######################執行執行緒##########################
 threadpage=[] #（換頁）所有執行緒存放的陣列
-for page in range(1,5):
+for page in range(1,105):
     Thread=pageThread(page)
     threadpage.append(Thread)
 for i in threadpage:
@@ -153,5 +153,5 @@ data = {
         }
 
 print(json.dumps(data))
-with open('data.json','w') as f:
+with open('../data/104sheng.json','w') as f:
     json.dump(data,f)

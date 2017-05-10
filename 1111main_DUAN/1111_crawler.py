@@ -113,7 +113,7 @@ plt.show()
 
 
 import json
-with open ('1111_crawler.json','w') as f:#建json檔
+with open ('../data/1111_crawler.json','w') as f:#建json檔
     json.dump(language, f)
 print(wc.most_common())
 

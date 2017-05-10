@@ -87,7 +87,7 @@ class pageThread (threading.Thread): #建立多執行緒類別(內文用)
 
 #######################執行執行緒##########################
 threadpage=[] #（換頁）所有執行緒存放的陣列
-for page in range(1,50):
+for page in range(1,150):
     Thread=pageThread(page)
     threadpage.append(Thread)
 for i in threadpage:
