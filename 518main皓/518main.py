@@ -89,5 +89,5 @@ print(dictlanguage)
 
 language = OrderedDict(dictlanguage)
 #輸出成json檔--
-with open('../data/518.json', 'w') as f:
+with open('../data/518main.json', 'w') as f:
     json.dump(language, f)

@@ -111,7 +111,7 @@ data={
 }
 
 print(json.dumps(data))
-with open('ptt_threading.json','w') as f:
+with open('../data/ptt_threading.json','w') as f:
     json.dump(data,f)
 
 

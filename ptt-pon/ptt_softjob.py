@@ -107,7 +107,7 @@ data={
 }
 
 print(json.dumps(data))
-with open('data.json','w') as f:
+with open('../data/ptt_softjob.json','w') as f:
     json.dump(data,f)
 
 

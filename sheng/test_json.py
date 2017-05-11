@@ -153,5 +153,5 @@ data = {
         }
 
 print(json.dumps(data))
-with open('../data/104sheng.json','w') as f:
+with open('../data/test_json.json','w') as f:
     json.dump(data,f)
