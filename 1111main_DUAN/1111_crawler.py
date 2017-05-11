@@ -4,6 +4,11 @@ from collections import Counter
 import re
 import threading
 import time
+import csv
+
+global all_case
+all_case=0
+
 wc = Counter()#建字典
 wc["C"] = 0
 wc["C++"] = 0
@@ -52,6 +57,8 @@ class getLinkThread (threading.Thread):#跑主頁的thread
 
 def getWord(link):
     res = requests.get(link)
+    global all_case
+    all_case=all_case+1
     print(link)
     soup = BeautifulSoup(res.text,"lxml")
     text = []#建空白list為了放內文upper後的值
@@ -112,13 +119,16 @@ plt.title("The most popular programming language")
 plt.show()
 
 
-import json
-with open ('../data/1111_crawler.json','w') as f:#建json檔
-    json.dump(language, f)
-print(wc.most_common())
+# import json
+# with open ('../data/1111_crawler.json','w') as f:#建json檔
+#     json.dump(language, f)
+# print(wc.most_common())
+
+with open ('../data/1111_crawler.csv','w') as fw:   # 寫入檔案
+    for lang,counts in wc.most_common():
+        fw.write('{},{}\n'.format(lang,counts))
 
 
-
-
+print('case:'+str(all_case))
 
 

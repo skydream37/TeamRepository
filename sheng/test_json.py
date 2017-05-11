@@ -5,7 +5,8 @@ import re
 from collections import Counter
 import threading
 import time
-
+global all_case
+all_case=0
 #######################自建字典##########################
 wc = Counter()
 wc["C"]=0
@@ -39,6 +40,8 @@ def extract(url):
     soup = BeautifulSoup(res.text, 'lxml')
     tool = []
     target = []
+    global all_case
+    all_case=all_case+1
     try:
         for word in soup.select('dd.tool')[0].text.split('、'):  # 每一頁面內的 "擅長工具："欄
             tool.append(word.upper())
@@ -152,6 +155,13 @@ data = {
         'TYPESCRIPT':wc["TYPESCRIPT"],
         }
 
-print(json.dumps(data))
-with open('../data/test_json.json','w') as f:
-    json.dump(data,f)
+# print(json.dumps(data))
+# with open('../data/test_json.json','w') as f:
+#     json.dump(data,f)
+
+
+with open ('../data/test_json.csv','w') as fw:   # 寫入檔案
+    for lang,counts in data:
+        fw.write('{},{}\n'.format(lang,counts))
+
+print('case:'+str(all_case))

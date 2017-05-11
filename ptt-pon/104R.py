@@ -4,20 +4,21 @@ import re
 from collections import Counter
 import threading
 import json
+import csv
 import time
+
+global all_case
+all_case=0
 
 def getLink(page): #把搜尋頁丟近來抓連結的function
     print('thread'+str(page)+'start') #測試多執行緒有沒有在動
     time.sleep(0.5)
     res = r.get("https://www.104.com.tw/jobbank/joblist/joblist.cfm?jobsource=104_bank1&ro=0&area=6001001000%2C6001002000&indcat=1001001000&order=2&asc=0&page={}".format(page)+"&psl=N_A")
-    time.sleep(0.4)
+
     soup = BeautifulSoup(res.text,'lxml')
-    time.sleep(0.2)
     links = ['https://www.104.com.tw' + link['href'] for link in soup.select('div.jobname_summary.job_name > a')]
-    time.sleep(0.2)
     print(len(links))
     global alinks #拿到外面alinks的值如果沒有加global會變成自己增加區域變數
-    time.sleep(0.2)
     alinks += links #alinks = alinks + links
 
 #     print('thread '+str(page)+' end ')
@@ -32,19 +33,15 @@ class getLinkThread (threading.Thread): #多線程處理
 
 
 def getWord(link): #把網址丟進來提取文字後做統計的function
+    global all_case
+    all_case=all_case+1
     print(link)
-    time.sleep(0.05)
     res = r.get(link)
-    time.sleep(0.05)
     soup = BeautifulSoup(res.text,'lxml')
-    time.sleep(0.05)
     list1 = str(soup.select('dd.tool > a')).upper() #擅長工具
-    time.sleep(0.05)
     list2 = str(soup.select('div.content')).upper() #內文
-    time.sleep(0.05)
     list3 = list1 + list2
     words = list(set(re.findall('[A-Z]+[+#]*' , list3)))#擅長工具＋內文 中的所有英文單字
-#     time.sleep(0.2)
 
     for word in words: # 計算所有英文單字的數量
         time.sleep(0.1)
@@ -86,7 +83,6 @@ for page in range(1, 151):
     threads.append(Thread)
 for i in threads:
     i.start()  # 執行緒開始
-    # time.sleep(0.1)
 for i in threads:
     i.join()
 
@@ -118,7 +114,6 @@ for link in alinks:
 for i in threadwords:
     i.start()  # 執行緒開始
     time.sleep(0.2)
-# time.sleep(0.5)
 for i in threadwords:
     i.join()
 
@@ -143,5 +138,11 @@ for lang in langs:  # 每一個語言
     if lang in wc.keys():  # 如果有在wc的key裡的話
         result_dict[lang] = wc[lang]  # lang是key ;wc[lang]語言數量是value
 
-with open('../data/104R.json','w') as f:
-    json.dump(result_dict,f)
+# with open('../data/104R.json','w') as f:
+#     json.dump(result_dict,f)
+
+with open ('../data/104R.csv','w') as fw:   # 寫入檔案
+    for lang,counts in result_dict:
+        fw.write('{},{}\n'.format(lang,counts))
+
+print('case:'+str(all_case))

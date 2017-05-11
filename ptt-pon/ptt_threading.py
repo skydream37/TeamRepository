@@ -4,7 +4,11 @@ import re
 import json
 from collections import Counter
 import threading
+import csv
 import time
+
+global all_case
+all_case=0
 
 wc = Counter()
 wc["C"] = 0
@@ -37,6 +41,8 @@ headers = {"cookie":"over18=1;"}
 def ptt(each_link):
     res = requests.get(each_link, headers=headers)
     soup = BeautifulSoup(res.text, 'lxml')
+    global all_case
+    all_case=all_case+1
 
     content = soup.select_one('#main-content')  # 內文
     for trash in soup.select('div.article-metaline') + soup.select('div.article-metaline-right') + soup.select(
@@ -110,8 +116,13 @@ data={
     'TYPESCRIPT': wc['TYPESCRIPT']
 }
 
-print(json.dumps(data))
-with open('../data/ptt_threading.json','w') as f:
-    json.dump(data,f)
+# print(json.dumps(data))
+# with open('../data/ptt_threading.json','w') as f:
+#     json.dump(data,f)
 
 
+with open ('../data/ptt_threading.csv','w') as fw:   # 寫入檔案
+    for lang,counts in data:
+        fw.write('{},{}\n'.format(lang,counts))
+
+print('case:'+str(all_case))

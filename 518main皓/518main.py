@@ -5,6 +5,9 @@ import time
 import threading
 import json
 from collections import OrderedDict
+import csv
+global all_case
+all_case=0
 
 global static #增加一個全域變數用來紀錄統計結果
 static={}
@@ -17,6 +20,8 @@ del wordlen[0]
 
 # 一個用來分析內頁的function--
 def inner_word(url):
+    global all_case
+    all_case=all_case+1
     inner = requests.get(url)  # 用get連到網頁
     innersoup = BeautifulSoup(inner.text, 'lxml')  # 放到BeautifulSoup解析
     innerselect2 = str(innersoup.select_one('div.job-detail-box > dl')).upper()
@@ -89,5 +94,17 @@ print(dictlanguage)
 
 language = OrderedDict(dictlanguage)
 #輸出成json檔--
-with open('../data/518main.json', 'w') as f:
-    json.dump(language, f)
+# with open('../data/518main.json', 'w') as f:
+#     json.dump(language, f)
+
+# f = open("../data/518main.csv","w")
+# w = csv.writer(f)
+# w.writerows(language)
+# f.close()
+
+with open ('../data/518main.csv','w') as fw:   # 寫入檔案
+
+    for lang,counts in dictlanguage:
+        fw.write('{},{}\n'.format(lang,counts))
+
+print('case:'+str(all_case))

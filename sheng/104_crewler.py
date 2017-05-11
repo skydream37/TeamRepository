@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import re
 from collections import Counter
 import threading
+import csv
 import time
 
 #######################自建字典##########################
@@ -127,3 +128,4 @@ plt.xticks(rotation=90)
 plt.bar(xticks, listvalue, align='center', color='green')
 plt.title("Hot Used Languaage")  # 給標題
 plt.show()
+

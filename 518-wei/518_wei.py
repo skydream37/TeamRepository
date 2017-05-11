@@ -5,6 +5,9 @@ import re
 from collections import Counter      # counter (dict形式）
 import threading
 import time
+import csv
+global all_case
+all_case=0
 
 #########  每個標題頁 def
 host = 'https://www.518.com.tw'
@@ -33,6 +36,8 @@ class getlinkThread(threading.Thread):
 def getinner(inner):
     res = requests.get(inner)
     soup = BeautifulSoup(res.text, 'lxml')
+    global all_case
+    all_case=all_case+1
     try:
         line1 = soup.select_one('div.JobDescription > p').text   # 工作內容
         line2 = soup.select_one('div.job-detail-box > dl').text  # 擅長工具
@@ -110,7 +115,7 @@ for i in threadinner:
 for i in threadinner:
     i.join()
 #=======================================================
-with open ('lanaugle_langs.csv','w') as fw:   # 寫入檔案
+with open ('../data/518_wei.csv','w') as fw:   # 寫入檔案
 
     for lang,counts in wc.most_common():
         fw.write('{},{}\n'.format(lang,counts))
@@ -122,10 +127,15 @@ from collections import OrderedDict
 language = OrderedDict(wc.most_common())
 print(language)
 
-with open('../data/518_wei.json','w') as f:   # 寫入json檔案
-    json.dump(language,f)                    # json 特有
-f.closed
-print (wc.most_common())
+# with open('../data/518_wei.json','w') as f:   # 寫入json檔案
+#     json.dump(language,f)                    # json 特有
+# f.closed
+# print (wc.most_common())
+
+# f = open("../data/518_wei.csv","w")
+# w = csv.writer(f)
+# w.writerows(wc.most_common)
+# f.close()
 
 
 #  圖
@@ -139,7 +149,7 @@ plt.xticks(rotation = 65)                  #選轉角度
 plt.title("language: %d" % len(language))  # 給標題
 plt.show()
 
-
+print('case:'+str(all_case))
 
 
 
