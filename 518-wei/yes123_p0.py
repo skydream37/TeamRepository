@@ -31,7 +31,7 @@ while True:
             eles.append(host + ele['href'])                           # 把標題頁網頁連結取出用 eles 裝箱
 
         browser.find_element_by_tag_name('body').send_keys(Keys.END)  # 模擬鍵盤 （end鍵往下捲動）
-        time.sleep(3)
+        time.sleep(0.5)
 
         with open('link_yes123_test3.csv', 'a') as f:   # 寫入檔案
             f.write('\n'.join(eles) + '\n')             # 回傳將 str 連結 iterable 各元素的字串
@@ -122,7 +122,12 @@ with open('link_yes123_test3.csv', 'r') as fr:              # 檔案匯入
 language = OrderedDict(wc.most_common())
 print(language)
 
-with open('yes123_json.json', 'w') as fu:   # 寫入json檔案
-    json.dump(language, fu)                 # json 特有
-    fu.closed
+# with open('yes123_json.json', 'w') as fu:   # 寫入json檔案
+#     json.dump(language, fu)                 # json 特有
+#     fu.closed
+
+with open('yes123_json.json','w') as f:   # 寫入json檔案
+    json.dump(wc,f)                    # json 特有
+f.closed
+
 print(wc.most_common())
