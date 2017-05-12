@@ -134,7 +134,7 @@ plt.show()
 
 import json
 data = {
-        'c':wc['c'],
+        'C':wc['C'],
         'C++':wc["C++"],
         'C#':wc["C#"],
         'PYTHON':wc["PYTHON"],
@@ -153,15 +153,17 @@ data = {
         'GO':wc["GO"],
         'DELPHI':wc["DELPHI"],
         'TYPESCRIPT':wc["TYPESCRIPT"],
+        'MYSQL': wc["MYSQL"],
+        'FTP': wc["FTP"],
+        'DNS': wc["DNS"],
         }
 
-# print(json.dumps(data))
-# with open('../data/test_json.json','w') as f:
-#     json.dump(data,f)
+print(json.dumps(data))
+with open('../data/test_json.json','w') as f:
+    json.dump(data,f)
 
-
-with open ('../data/test_json.csv','w') as fw:   # 寫入檔案
-    for lang,counts in data:
-        fw.write('{},{}\n'.format(lang,counts))
+# with open ('../data/test_json.csv','w') as fw:   # 寫入檔案
+#     for lang,counts in data:
+#         fw.write('{},{}\n'.format(lang,counts))
 
 print('case:'+str(all_case))

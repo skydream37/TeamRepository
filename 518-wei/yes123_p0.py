@@ -61,8 +61,8 @@ from collections import Counter
 from collections import OrderedDict
 import json
 #=====================================================================================
-wc = Counter()              # local variable 'wc' referenced before assignment  要注意區域變數問題！！！  不能放在迴圈
-wc["C"] = 0                 # 自行建立字典過濾非必要的單字
+wc = Counter()                           # local variable 'wc' referenced before assignment  要注意區域變數問題！！！  不能放在迴圈
+wc["C"] = 0                              # 自行建立字典過濾非必要的單字
 wc["C++"] = 0
 wc["C#"] = 0
 wc["PYTHON"] = 0
@@ -72,8 +72,8 @@ wc["PHP"] = 0
 wc["HTML"] = 0
 wc["SQL"] = 0
 wc["CSS"] = 0
-wc["R"] = 0
 wc["CSS"] = 0
+wc["R"] = 0
 wc["BASH"] = 0
 wc["RUBY"] = 0
 wc["PERL"] = 0
@@ -82,7 +82,9 @@ wc["SWIFT"] = 0
 wc["GO"] = 0
 wc["DELPHI"] = 0
 wc["TYPESCRIPT"] = 0
-wc["JQUERY"] = 0
+wc["MYSQL"] = 0
+wc["FTP"] = 0
+wc["DNS"] = 0
 
 
 def get_inner(open_link):

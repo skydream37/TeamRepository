@@ -12,10 +12,11 @@ all_case=0
 
 def getLink(page): #把搜尋頁丟近來抓連結的function
     print('thread'+str(page)+'start') #測試多執行緒有沒有在動
-    time.sleep(0.5)
-    res = r.get("https://www.104.com.tw/jobbank/joblist/joblist.cfm?jobsource=104_bank1&ro=0&area=6001001000%2C6001002000&indcat=1001001000&order=2&asc=0&page={}".format(page)+"&psl=N_A")
 
+    res = r.get("https://www.104.com.tw/jobbank/joblist/joblist.cfm?jobsource=104_bank1&ro=0&area=6001001000%2C6001002000&indcat=1001001000&order=2&asc=0&page={}".format(page)+"&psl=N_A")
+    time.sleep(0.5)
     soup = BeautifulSoup(res.text,'lxml')
+    time.sleep(0.5)
     links = ['https://www.104.com.tw' + link['href'] for link in soup.select('div.jobname_summary.job_name > a')]
     print(len(links))
     global alinks #拿到外面alinks的值如果沒有加global會變成自己增加區域變數
@@ -83,6 +84,8 @@ for page in range(1, 151):
     threads.append(Thread)
 for i in threads:
     i.start()  # 執行緒開始
+    time.sleep(2)
+
 for i in threads:
     i.join()
 
@@ -113,7 +116,7 @@ for link in alinks:
     threadwords.append(threadword)
 for i in threadwords:
     i.start()  # 執行緒開始
-    time.sleep(0.2)
+    time.sleep(0.1)
 for i in threadwords:
     i.join()
 
@@ -131,18 +134,20 @@ for i in threadwords:
 #     continue
 #     print(link) #有一些廣告或外包網continue
 
-string = 'C|C++|C#|PYTHON|JAVA|JAVASCRIPT|PHP|HTML|SQL|CSS|R|BASH|RUBY|PERL|SCALA|SWIFT|GO|DELPHI|TYPESCRIPT|MYSQL'
+string = 'C|C++|C#|PYTHON|JAVA|JAVASCRIPT|PHP|HTML|SQL|CSS|R|BASH|RUBY|PERL|SCALA|SWIFT|GO|DELPHI|TYPESCRIPT|MYSQL|FTP|DNS'
 langs = string.split('|')  # string裡面的語言切開
+for i in result_dict:
+    result_dict[i]=0
 
 for lang in langs:  # 每一個語言
     if lang in wc.keys():  # 如果有在wc的key裡的話
         result_dict[lang] = wc[lang]  # lang是key ;wc[lang]語言數量是value
 
-# with open('../data/104R.json','w') as f:
-#     json.dump(result_dict,f)
+with open('../data/104R.json','w') as f:
+    json.dump(wc,f)
 
-with open ('../data/104R.csv','w') as fw:   # 寫入檔案
-    for lang,counts in result_dict:
-        fw.write('{},{}\n'.format(lang,counts))
+# with open ('../data/104R.csv','w') as fw:   # 寫入檔案
+#     for lang,counts in result_dict:
+#         fw.write('{},{}\n'.format(lang,counts))
 
 print('case:'+str(all_case))

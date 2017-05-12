@@ -113,16 +113,20 @@ data={
     'SWIFT': wc['SWIFT'],
     'GO': wc['GO'],
     'DELPHI': wc['DELPHI'],
-    'TYPESCRIPT': wc['TYPESCRIPT']
+    'TYPESCRIPT': wc['TYPESCRIPT'],
+    'MYSQL': wc['MYSQL'],
+    'FTP': wc['FTP'],
+    'MYSQL': wc['MYSQL'],
+    'DELPHI': wc['DELPHI']
 }
 
-# print(json.dumps(data))
-# with open('../data/ptt_threading.json','w') as f:
-#     json.dump(data,f)
+print(json.dumps(data))
+with open('../data/ptt_threading.json','w') as f:
+    json.dump(data,f)
 
 
-with open ('../data/ptt_threading.csv','w') as fw:   # 寫入檔案
-    for lang,counts in data:
-        fw.write('{},{}\n'.format(lang,counts))
+# with open ('../data/ptt_threading.csv','w') as fw:   # 寫入檔案
+#     for lang,counts in data:
+#         fw.write('{},{}\n'.format(lang,counts))
 
 print('case:'+str(all_case))

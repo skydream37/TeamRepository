@@ -5,7 +5,6 @@ import re
 from collections import Counter      # counter (dict形式）
 import threading
 import time
-import csv
 global all_case
 all_case=0
 
@@ -84,8 +83,8 @@ wc["PHP"] = 0
 wc["HTML"] = 0
 wc["SQL"] = 0
 wc["CSS"] = 0
-wc["R"] = 0
 wc["CSS"] = 0
+wc["R"] = 0
 wc["BASH"] = 0
 wc["RUBY"] = 0
 wc["PERL"] = 0
@@ -94,6 +93,9 @@ wc["SWIFT"] = 0
 wc["GO"] = 0
 wc["DELPHI"] = 0
 wc["TYPESCRIPT"] = 0
+wc["MYSQL"] = 0
+wc["FTP"] = 0
+wc["DNS"] = 0
 
 threads = []                            # 標題頁
 for i in range(1, 45):                   # 頁數
@@ -115,10 +117,10 @@ for i in threadinner:
 for i in threadinner:
     i.join()
 #=======================================================
-with open ('../data/518_wei.csv','w') as fw:   # 寫入檔案
-
-    for lang,counts in wc.most_common():
-        fw.write('{},{}\n'.format(lang,counts))
+# with open ('../data/518_wei.csv','w') as fw:   # 寫入檔案
+#
+#     for lang,counts in wc.most_common():
+#         fw.write('{},{}\n'.format(lang,counts))
 
 
 #========================================================
@@ -127,16 +129,10 @@ from collections import OrderedDict
 language = OrderedDict(wc.most_common())
 print(language)
 
-# with open('../data/518_wei.json','w') as f:   # 寫入json檔案
-#     json.dump(language,f)                    # json 特有
-# f.closed
-# print (wc.most_common())
-
-# f = open("../data/518_wei.csv","w")
-# w = csv.writer(f)
-# w.writerows(wc.most_common)
-# f.close()
-
+with open('../data/518_wei.json','w') as f:   # 寫入json檔案
+    json.dump(wc,f)                    # json 特有
+f.closed
+print (wc)
 
 #  圖
 import numpy as np

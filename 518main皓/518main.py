@@ -16,6 +16,9 @@ static={}
 with open('./wordlen.txt') as f:
     wordlen = f.read().split('\n')
 del wordlen[0]
+for i in wordlen:   #如果list裡面的字有出現在我們的字典檔中
+    static[i] = 0  # 如果static統計的字典檔還沒有這個字 就新增
+del static[""]
 #--
 
 # 一個用來分析內頁的function--
@@ -47,10 +50,10 @@ def inner_word(url):
         if i in wordlen:  # 如果list裡面的字有出現在我們的字典檔中
             if i in static:  # 如果static已經有這個字 就在value+1
                 static[i] += 1
-            else:
-                static[i] = 1  # 如果static統計的字典檔還沒有這個字 就新增
     return static
 #--
+
+
 
 #這是用來抓出搜尋畫面中所有的case連結--
 def page(url):
@@ -88,23 +91,23 @@ for thread in threads:
 for thread in threads:
     thread.join()
 
-dictlanguage= sorted(static.items(), key=lambda d:d[1],reverse=True) #排序
+# dictlanguage= sorted(static.items(), key=lambda d:d[1],reverse=True) #排序
 
-print(dictlanguage)
+# print(dictlanguage)
 
-language = OrderedDict(dictlanguage)
-#輸出成json檔--
-# with open('../data/518main.json', 'w') as f:
-#     json.dump(language, f)
+# language = OrderedDict(dictlanguage)
+# 輸出成json檔--
+with open('../data/518main.json', 'w') as f:
+    json.dump(static, f)
 
 # f = open("../data/518main.csv","w")
 # w = csv.writer(f)
 # w.writerows(language)
 # f.close()
 
-with open ('../data/518main.csv','w') as fw:   # 寫入檔案
-
-    for lang,counts in dictlanguage:
-        fw.write('{},{}\n'.format(lang,counts))
+# with open ('../data/518main.csv','w') as fw:   # 寫入檔案
+#
+#     for lang,counts in dictlanguage:
+#         fw.write('{},{}\n'.format(lang,counts))
 
 print('case:'+str(all_case))
