@@ -122,7 +122,8 @@ with open('link_yes123_test3.csv', 'r') as fr:              # 檔案匯入
 language = OrderedDict(wc.most_common())
 print(language)
 
-with open('yes123_json.json', 'w') as fu:   # 寫入json檔案
-    json.dump(language, fu)                 # json 特有
-    fu.closed
+with open('yes123_json.csv', 'r') as fr:              # 檔案匯入
+    for link in fr.read().strip().split('\n'):
+        get_inner(link)                                # 把檔案丟入方法
+print(link)
 print(wc.most_common())

@@ -6,26 +6,30 @@ import matplotlib.pyplot as pt
 import numpy as np
 import threading
 Host = 'https://www.104.com.tw'
-wc=Counter()
-wc['BASH']=0
-wc['C']=0
-wc['C#']=0
-wc['C++']=0
-wc['CSS']=0
-wc['DELPHI']=0
-wc['GO']=0
-wc['HTML']=0
-wc['JAVA']=0
-wc['JAVASCRIPT']=0
-wc['PYTHON']=0
-wc['PHP']=0
-wc['PERL']=0
-wc['R']=0
-wc['RUBY']=0
-wc['SCALA']=0
-wc['SWIFT']=0
-wc['SQL']=0
-wc['TYPESCRIPT']=0
+wc = Counter()                           # local variable 'wc' referenced before assignment  要注意區域變數問題！！！  不能放在迴圈
+wc["C"] = 0                              # 自行建立字典過濾非必要的單字
+wc["C++"] = 0
+wc["C#"] = 0
+wc["PYTHON"] = 0
+wc["JAVA"] = 0
+wc["JAVASCRIPT"] = 0
+wc["PHP"] = 0
+wc["HTML"] = 0
+wc["SQL"] = 0
+wc["CSS"] = 0
+wc["R"] = 0
+wc["BASH"] = 0
+wc["RUBY"] = 0
+wc["PERL"] = 0
+wc["SCALA"] = 0
+wc["SWIFT"] = 0
+wc["GO"] = 0
+wc["DELPHI"] = 0
+wc["TYPESCRIPT"] = 0
+wc["MYSQL"] = 0
+wc["FTP"] = 0
+wc["DNS"] = 0
+
 
 
 def popu(g):  # 此方法是為了取出內頁並且比對內文是否符合要篩選的字
@@ -45,7 +49,13 @@ def popu(g):  # 此方法是為了取出內頁並且比對內文是否符合要�
         for c in W:  # 如果有出現在字典中 丟到wc做計算
             if c in wc:
                 wc[c] += 1
-    return (wc)
+    #return (wc)
+
+
+
+
+
+
 
 
 def pagechange(p, wc):  # 此方法是為了取出主頁
@@ -83,7 +93,9 @@ if __name__ == '__main__':
 
 print("DONE!")
 
-wc.most_common()
+
+
+
 leng = []  # 取出每個key
 for i in wc.keys():
     leng.append(i)
@@ -103,3 +115,16 @@ pt.xticks(language, leng)
 # pt.ylim(0,800)
 pt.title('Language Data Form 1111')
 pt.show()
+
+
+
+#import json
+#with open ('1111_multithreading.json','w') as f:#建json檔
+ #   json.dump(wc, f)
+
+
+
+with open ('1111_multithreading.csv','w') as fw:   # 寫入檔案
+    for lang,counts in wc.most_common():
+        fw.write('{},{}\n'.format(lang,counts))
+print(wc.most_common())
